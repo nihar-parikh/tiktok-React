@@ -1,38 +1,28 @@
-.App {
-  text-align: center;
+/*It allows to have video caurosel(snapping) functionality in y axis */
+/* mandatory */
+html {
+  scroll-snap-type: y mandatory;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.app {
+  display: grid;
+  background-color: black;
+  height: 100vh;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.app__videos {
+  position: relative;
+  height: 800px;
+  overflow: scroll;
+  width: 80%;
+  max-width: 500px;
+  scroll-snap-type: y mandatory;
+  border-radius: 20px;
+  margin: 0 50% 0 33%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* For hidding scrollbar */
+/* Don't use overflow: hidden */
+.app__videos::-webkit-scrollbar {
+  display: none;
 }
